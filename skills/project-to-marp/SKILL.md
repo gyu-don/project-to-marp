@@ -28,10 +28,11 @@ Only ask what cannot be reasonably inferred. Ask all questions in a single messa
 - Presentation length: "5 min (5–7 slides) / 10 min (10–12 slides) / 15 min (15–18 slides)"
 - Audience: "Developers / Non-technical stakeholders / Mixed / Other"
 
-**Ask as freeform if choices would be burdensome:**
-- Purpose / key message: "What's the one thing you most want the audience to take away? (Don't worry about organizing — just write whatever comes to mind)"
+**Always ask about purpose / key message — choose the form based on how much you can infer:**
+- If the user's intent feels sufficiently clear from context, propose your inferred message as options using AskUserQuestion (e.g. "Does this capture what you want to convey? / Something else")
+- If intent is unclear or thin, make your best guess as a suggestion and ask as freeform: "I'm thinking something like '…' — what's the one thing you most want the audience to take away? (Don't worry about organizing — just write whatever comes to mind)"
 
-If both audience and purpose can be inferred from context, skip asking entirely.
+The audience question can be skipped if clearly inferable.
 
 ### 4. Create the Presentation
 
@@ -55,7 +56,7 @@ Adjust sections based on audience and purpose. Non-technical audiences: skip or 
 
 For Marp syntax, see [references/marp-syntax.md](references/marp-syntax.md).
 
-### 5. PDF Export and Layout Check (if Marp is installed)
+### 5. HTML Export and Layout Check (if Marp is installed)
 
 Check if Marp CLI is available:
 ```bash
@@ -63,8 +64,8 @@ marp --version
 ```
 
 If available:
-1. Export to PDF: `marp --pdf --allow-local-files presentation.md -o presentation.pdf`
-2. Open or inspect the PDF to check for text overflow or layout issues
+1. Export to HTML: `marp --allow-local-files presentation.md -o presentation.html`
+2. Open or inspect the HTML to check for text overflow or layout issues
 3. If any slide has clipped or overflowing text, shorten the content and re-export
 
 If Marp is not installed, inform the user and suggest: `npm install -g @marp-team/marp-cli`
