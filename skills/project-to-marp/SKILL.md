@@ -8,18 +8,21 @@ allowed-tools: Read, Grep, Write, Edit, Bash(marp *)
 
 Create a Marp presentation introducing the current project with minimal user effort.
 
+## Language
+
+Write the presentation in the same language as the user's request/conversation, unless the user specifies otherwise.
+
 ## Workflow
 
 ### 1. Read Context
 
-Before asking anything, check the current conversation for clues about the user's intent — what they want to communicate, to whom, or any constraints already mentioned.
+Before anything else, check the current conversation for clues about the user's intent — what they want to communicate, to whom, or any constraints already mentioned.
 
-### 2. Explore the Project
+### 2. Quick Survey
 
-Quickly survey the project to understand what it does:
-- README, docs
-- Directory structure and key source files
-- Any existing documentation or descriptions
+Do a lightweight survey — just enough to ask informed questions:
+- README, package.json / pyproject.toml / equivalent
+- Top-level directory structure
 
 ### 3. Clarify (Keep It Short)
 
@@ -35,7 +38,16 @@ Only ask what cannot be reasonably inferred. Ask all questions in a single messa
 
 The audience question can be skipped if clearly inferable.
 
-### 4. Create the Presentation
+### 4. Deep Exploration
+
+After receiving the user's answers, thoroughly explore the project to understand it well:
+- Key source files, core logic, architecture
+- Docs, comments, examples
+- Any unique or interesting aspects worth highlighting
+
+Take time here — a well-understood project leads to a much better presentation.
+
+### 5. Create the Presentation
 
 Generate a `.md` file (e.g. `presentation.md`) in the project root.
 
@@ -54,19 +66,20 @@ Adjust sections based on audience and purpose. Non-technical audiences: skip or 
 - One idea per slide
 - Bullet points: max 5–6 per slide, each ≤ 15 words
 - Title slides and section dividers: use `<!-- _class: lead -->`
+- Keep content concise to avoid text overflow — when in doubt, cut rather than squeeze
 
 For Marp syntax, see [references/marp-syntax.md](references/marp-syntax.md).
 
-### 5. HTML Export and Layout Check (if Marp is installed)
+### 6. Export (if Marp is installed)
 
 Check if Marp CLI is available:
 ```bash
 marp --version
 ```
 
-If available:
-1. Export to HTML: `marp --allow-local-files presentation.md -o presentation.html`
-2. Open or inspect the HTML to check for text overflow or layout issues
-3. If any slide has clipped or overflowing text, shorten the content and re-export
+If available, export to HTML:
+```bash
+marp --allow-local-files presentation.md -o presentation.html
+```
 
 If Marp is not installed, inform the user and suggest: `npm install -g @marp-team/marp-cli`
