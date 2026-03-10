@@ -1,0 +1,12 @@
+{
+  "name": "project-to-marp",
+  "version": "0.1.0",
+  "description": "Generate Marp presentations from your project with minimal effort. Claude explores your project, asks a few questions, and creates polished slides.",
+  "author": {
+    "name": "gyu-don"
+  },
+  "homepage": "https://github.com/gyu-don/project-to-marp",
+  "repository": "https://github.com/gyu-don/project-to-marp",
+  "license": "MIT",
+  "keywords": ["marp", "presentation", "slides", "markdown"]
+}
