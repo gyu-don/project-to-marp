@@ -1,6 +1,7 @@
 ---
 name: project-to-marp
 description: Create a Marp presentation (markdown slides) introducing a project. Use when the user wants to make a presentation or slides about their project, codebase, or work. Triggers on requests like "make slides for this project", "create a presentation", "プレゼンを作って", "スライドを作りたい".
+allowed-tools: Read, Grep, Write, Edit, Bash(marp *)
 ---
 
 # Project to Marp
