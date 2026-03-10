@@ -47,11 +47,24 @@ After receiving the user's answers, thoroughly explore the project to understand
 
 Take time here — a well-understood project leads to a much better presentation.
 
-### 5. Create the Presentation
+### 5. Design Two Storylines
 
-Generate a `.md` file (e.g. `presentation.md`) in the project root.
+Based on the user's answers and your deep exploration, design **two distinct storyline proposals** — think of them as two different angles or narratives for the same project. Each proposal should have a different structure, emphasis, or rhetorical flow. For example:
 
-**Structure:**
+- **Proposal A**: Problem-first — open with the pain point, then reveal the solution
+- **Proposal B**: Vision-first — open with the end result or impact, then explain how
+
+Other possible contrasts: technical depth vs. business value, chronological story vs. feature-driven, demo-first vs. theory-first. Choose contrasts that make sense for the project and audience.
+
+Do **not** ask the user to choose — generate slides for both.
+
+### 6. Create Both Presentations
+
+Generate **two** `.md` files in the project root:
+- `presentation-a.md` — Proposal A
+- `presentation-b.md` — Proposal B
+
+**Structure per proposal** (adjust based on storyline angle):
 1. Title slide — project name + one-line description
 2. Problem / Background — why this project exists
 3. Solution / Overview — what it does
@@ -59,8 +72,6 @@ Generate a `.md` file (e.g. `presentation.md`) in the project root.
 5. Architecture / How It Works — diagram or bullet overview (if technical audience)
 6. Demo / Usage — example commands, screenshots, or code snippets
 7. Summary + Next Steps / Call to Action
-
-Adjust sections based on audience and purpose. Non-technical audiences: skip or simplify architecture.
 
 **Writing style:**
 - One idea per slide
@@ -70,16 +81,25 @@ Adjust sections based on audience and purpose. Non-technical audiences: skip or 
 
 For Marp syntax, see [references/marp-syntax.md](references/marp-syntax.md).
 
-### 6. Export (if Marp is installed)
+### 7. Export (if Marp is installed)
 
 Check if Marp CLI is available:
 ```bash
 marp --version
 ```
 
-If available, export to HTML:
+If available, export both presentations to HTML:
 ```bash
-marp --allow-local-files presentation.md -o presentation.html
+marp --allow-local-files presentation-a.md -o presentation-a.html
+marp --allow-local-files presentation-b.md -o presentation-b.html
 ```
 
 If Marp is not installed, inform the user and suggest: `npm install -g @marp-team/marp-cli`
+
+### 8. Explain Both Proposals
+
+After generating both presentations, explain them to the user in a single message:
+
+- **Proposal A** (`presentation-a.md`): describe its storyline angle, opening hook, and what kind of audience or occasion it suits best
+- **Proposal B** (`presentation-b.md`): same breakdown
+- Briefly note the key difference between the two, and let the user know they can use either as-is, ask for revisions, or merge elements from both

@@ -1,6 +1,6 @@
 {
   "name": "project-to-marp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate Marp presentations from your project with minimal effort. Claude explores your project, asks a few questions, and creates polished slides.",
   "author": {
     "name": "gyu-don"
