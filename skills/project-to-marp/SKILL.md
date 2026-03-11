@@ -90,8 +90,7 @@ marp --version
 
 If available, export both presentations to HTML:
 ```bash
-marp --allow-local-files presentation-a.md -o presentation-a.html
-marp --allow-local-files presentation-b.md -o presentation-b.html
+marp --no-stdin --allow-local-files presentation-a.md -o presentation-a.html && marp --no-stdin --allow-local-files presentation-b.md -o presentation-b.html
 ```
 
 If Marp is not installed, inform the user and suggest: `npm install -g @marp-team/marp-cli`
